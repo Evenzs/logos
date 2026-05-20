@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════════
+   EVENZS BRAND TOKENS — exact from evenzs1.png reference
+   ═══════════════════════════════════════════════════════════════════ */
+:root {
+  --navy:       #0B1220;
+  --navy-deep:  #121B2B;
+  --obsidian:   #0F131A;
+  --gold:       #D4AF37;
+  --gold-light: #E8D880;
+  --gold-mid:   #C9A230;
+  --gold-dark:  #B8920A;
+  --ivory:      #F7F3E9;
+  --platinum:   #9CA3AF;
+  --font:       'Poppins', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--navy);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animations */
+.flow-line {
+  stroke-dasharray: 8 5;
+  animation: flow 2s linear infinite;
+}
+@keyframes flow { to { stroke-dashoffset: -26; } }
+
+.node-pulse { animation: npulse 2.5s ease-in-out infinite; }
+@keyframes npulse { 0%,100%{opacity:.6} 50%{opacity:1} }
+
+.fade-up { animation: fup 0.65s ease-out both; opacity: 0; }
+@keyframes fup { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+
+.d1 { animation-delay: .1s }
+.d2 { animation-delay: .2s }
+.d3 { animation-delay: .35s }
+.d4 { animation-delay: .5s }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #070C16; }
+::-webkit-scrollbar-thumb { background: rgba(212,175,55,.2); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(212,175,55,.4); }
